@@ -1,0 +1,27 @@
+package com.example;
+
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ApplicationContext;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import static org.hamcrest.CoreMatchers.not;
+import static org.hamcrest.CoreMatchers.nullValue;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class DemoApplicationTests {
+
+    @Autowired
+    ApplicationContext applicationContext;
+
+    @Test
+    public void contextLoads() {
+
+        Assert.assertThat("should inject ac", applicationContext, not(nullValue()));
+    }
+
+}
